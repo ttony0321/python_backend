@@ -1,0 +1,17 @@
+{% extends 'admin/change_list.html' %}
+{% load static %}
+
+{% block extrahead %}
+{{ block.super }}
+    <script>
+    function order_refund_submit(obj_id){
+        jQuery("#changelist-form").append('<input type="hidden" name="obj_id" value="' + obj_id +'">')
+        jQuery("#changelist-form").submit()
+    }
+    </script>
+{% endblock %}
+
+{% block search %}{# 서치바에 들어가게됨 #}
+  <a  class="btn btn-primary mb-1" href="/admin/order/order/date_view/">날짜뷰 보기</a>
+{{ block.super }}
+{% endblock %}
